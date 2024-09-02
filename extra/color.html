@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Code Reference</title>
+    <link rel="stylesheet" href="color.css">
+</head>
+<body>
+ <!-- SIDE BAR -->
+ <nav class="sidebar">
+    <ul class="nav-list">
+        <li class="nav-item"><a href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a href="reports.html">Reports</a></li>
+        <li class="nav-item"><a href="map.html">Map Overview</a></li>
+        <li class="nav-item"><a href="color.html">Color Code Reference</a></li>
+        <li class="nav-item"><a href="#help">Help</a></li>
+        <li class="nav-item"><a href="signin.html">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- TOP BAR -->
+<div class="main-content">
+    <div class="top-bar">
+        <div class="logo">RoadGuard</div>
+        <div class="top-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <!-- <a href="#profile">Profile</a> -->
+            <a href="signin.html">Logout</a>
+        </div>
+    </div>
+</div>
+    <div class="container">
+        <h1>Color Code Reference</h1>
+        <div class="color-box" data-severity="Critical" data-color="red"></div>
+        <div class="color-info">
+            <span class="color-name">Red</span>
+            <span class="severity">Critical</span>
+        </div>
+        <div class="color-box" data-severity="Medium" data-color="#FF681F"></div>
+        <div class="color-info">
+            <span class="color-name">Orange</span>
+            <span class="severity">Medium</span>
+        </div>
+        <div class="color-box" data-severity="Low" data-color="#deb954"></div>
+        <div class="color-info">
+            <span class="color-name">Yellow</span>
+            <span class="severity">Low</span>
+        </div>
+        <div class="color-box" data-severity="Informational" data-color="green"></div>
+        <div class="color-info">
+            <span class="color-name">Green</span>
+            <span class="severity">Informational</span>
+        </div>
+    </div>
+    <script src="color.js"></script>
+</body>
+</html>

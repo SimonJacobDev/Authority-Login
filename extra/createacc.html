@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            background: url('images\\1080_Road-and-infrastructure-maintenance-with-image-data-is-a-gamewinner.webp') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333; /* Dark grey text for better contrast */
+        }
+
+        .create-account-container {
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            backdrop-filter: blur(8px); /* Blurring background */
+            border: 1px solid #ddd;
+        }
+
+        .create-account-container img {
+            width: 120px; /* Logo size */
+            margin-bottom: 20px;
+        }
+
+        .create-account-container h2 {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #333333; /* Dark grey text */
+            font-weight: 500;
+        }
+
+        .create-account-container input {
+            width: 92%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .create-account-container input:focus {
+            border-color: #4285f4;
+            box-shadow: 0 0 8px rgba(66, 133, 244, 0.5);
+        }
+
+        .create-account-container button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4285f4; /* Google blue */
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-weight: 500;
+        }
+
+        .create-account-container button:hover {
+            background-color: #357ae8; /* Darker blue on hover */
+            transform: translateY(-2px); /* Subtle lift effect */
+        }
+
+        .create-account-container .form-toggle {
+            margin-top: 20px;
+            color: #4285f4; /* Google blue */
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .create-account-container .form-toggle:hover {
+            color: #357ae8; /* Darker blue on hover */
+        }
+
+        .create-account-container .social-buttons {
+            margin-top: 20px;
+        }
+
+        .create-account-container .social-buttons a {
+            display: inline-block;
+            width: 48%;
+            padding: 12px;
+            margin: 5px 1%;
+            border-radius: 8px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .create-account-container .social-buttons a.google {
+            background-color: #4285f4; /* Google blue */
+        }
+
+        .create-account-container .social-buttons a.google:hover {
+            background-color: #357ae8; /* Darker blue on hover */
+            transform: translateY(-2px); /* Subtle lift effect */
+        }
+
+        .create-account-container .social-buttons a.facebook {
+            background-color: #3b5998; /* Facebook blue */
+        }
+
+        .create-account-container .social-buttons a.facebook:hover {
+            background-color: #2d4373; /* Darker blue on hover */
+            transform: translateY(-2px); /* Subtle lift effect */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="create-account-container">
+        <img src="images/Black and White Modern Streetwear Logo (2).png" alt="Logo">
+        <h2>Create Account</h2>
+        <input type="text" id="signupName" placeholder="Full Name" required>
+        <input type="email" id="signupEmail" placeholder="Email" required>
+        <input type="password" id="signupPassword" placeholder="Password" required>
+        <a href="dashboard.html">
+        <button onclick="createAccount()">Create Account</button></a>
+        <a class="form-toggle" onclick="toggleForm()">Already have an account? Sign in</a>
+        <div class="social-buttons">
+            <a href="signin.html" class="google">Sign up with Google</a>
+            <!-- <a href="#" class="facebook">Sign up with Facebook</a>  -->
+        </div>
+    </div>
+
+    <script>
+        function createAccount() {
+            // Add account creation logic here
+            alert('Account creation functionality not implemented');
+        }
+
+        function toggleForm() {
+            // Logic to switch to login page
+            alert('Switch to login form');
+        }
+    </script>
+
+</body>
+</html>

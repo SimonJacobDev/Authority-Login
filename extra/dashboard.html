@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <!-- SIDE BAR -->
+    <nav class="sidebar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="dashboard.html">Dashboard</a></li>
+            <li class="nav-item"><a href="reports.html">Reports</a></li>
+            <li class="nav-item"><a href="map.html">Map Overview</a></li>
+            <li class="nav-item"><a href="color.html">Color Code Reference</a></li>
+            <li class="nav-item"><a href="#help">Help</a></li>
+            <li class="nav-item"><a href="signin.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- TOP BAR -->
+    <div class="main-content">
+        <div class="top-bar">
+            <div class="logo">RoadGuard</div>
+            <div class="top-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <!-- <a href="#profile">Profile</a> -->
+                <a href="signin.html">Logout</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-container">
+        <div class="item">
+            <div class="circle totalCount" data-percentage="100" id="totalCount">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle class="background" cx="75" cy="75" r="70"></circle>
+                    <circle class="foreground" cx="75" cy="75" r="70"></circle>
+                </svg>
+                <span class="progress">100%</span>
+            </div>
+            <span class="text t1">TOTAL</span>
+        </div>
+        <div class="item">
+            <div class="circle pendingCount" data-percentage="83" id="pendingCount">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle class="background" cx="75" cy="75" r="70"></circle>
+                    <circle class="foreground" cx="75" cy="75" r="70"></circle>
+                </svg>
+                <span class="progress">83%</span>
+            </div>
+            <span class="text t2">PENDING</span>
+        </div>
+        <div class="item">
+            <div class="circle completedCount" data-percentage="17" id="completedCount">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle class="background" cx="75" cy="75" r="70"></circle>
+                    <circle class="foreground" cx="75" cy="75" r="70"></circle>
+                </svg>
+                <span class="progress">17%</span>
+            </div>
+            <span class="text t3">COMPLETED</span>
+        </div>
+    </div>
+
+    <!-- RECENT REPORTS AND FILTERS -->
+    <h2>Recent Reports</h2>
+    <!-- Filters -->
+    <div class="filters">
+        <h3>Filters</h3>
+        <label for="severity">Severity:</label>
+        <select id="severity">
+            <option value="">All</option>
+            <option value="Critical">Critical</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+            <option value="Informational">Informational</option>
+        </select>
+
+        <label for="location">Location/Area:</label>
+        <select id="location">
+            <option value="">All</option>
+            <option value="City A">City A</option>
+            <option value="City B">City B</option>
+        </select>
+
+        <label for="date-from">Date From:</label>
+        <input type="date" id="date-from">
+
+        <label for="date-to">Date To:</label>
+        <input type="date" id="date-to">
+
+        <label for="status">Status:</label>
+        <select id="status">
+            <option value="">All</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+        </select>
+        
+        <button id="clear-filters" onclick="clearFilters()">Clear Filters</button>
+        
+    </div>
+    <!-- Recent Reports Section -->
+    <div class="recent-reports">
+        <div class="report-row">
+            <!-- Dynamic report containers will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

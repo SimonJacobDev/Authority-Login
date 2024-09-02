@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="reports.css">
+</head>
+<body>
+   <!-- SIDE BAR -->
+   <nav class="sidebar">
+    <ul class="nav-list">
+        <li class="nav-item"><a href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a href="reports.html">Reports</a></li>
+        <li class="nav-item"><a href="map.html">Map Overview</a></li>
+        <li class="nav-item"><a href="color.html">Color Code Reference</a></li>
+        <li class="nav-item"><a href="#help">Help</a></li>
+        <li class="nav-item"><a href="signin.html">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- TOP BAR -->
+<div class="main-content">
+    <div class="top-bar">
+        <div class="logo">RoadGuard</div>
+        <div class="top-nav">
+            <a href="dashboard.html">Dashboard</a>
+            <!-- <a href="#profile">Profile</a> -->
+            <a href="signin.html">Logout</a>
+        </div>
+    </div>
+</div>
+
+    <h2>REPORTS</h2>
+    <!-- Reports -->
+    <div class="container c1">
+        <div class="item total">
+            <div class="circle" data-percentage="100">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle class="background" cx="75" cy="75" r="70"></circle>
+                    <circle class="foreground" cx="75" cy="75" r="70"></circle>
+                </svg>
+                <span class="progress">100</span>
+            </div>
+            <span class="text">TOTAL</span>
+        </div>
+        <div class="item pending">
+            <div class="circle" data-percentage="83">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle class="background" cx="75" cy="75" r="70"></circle>
+                    <circle class="foreground" cx="75" cy="75" r="70"></circle>
+                </svg>
+                <span class="progress">83</span>
+            </div>
+            <span class="text">PENDING</span>
+        </div>
+        <div class="item completed">
+            <div class="circle" data-percentage="17">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle class="background" cx="75" cy="75" r="70"></circle>
+                    <circle class="foreground" cx="75" cy="75" r="70"></circle>
+                </svg>
+                <span class="progress">17</span>
+            </div>
+            <span class="text">COMPLETED</span>
+        </div>
+        <div class="item inprogress">
+            <div class="circle" data-percentage="3">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle class="background" cx="75" cy="75" r="70"></circle>
+                    <circle class="foreground" cx="75" cy="75" r="70"></circle>
+                </svg>
+                <span class="progress">3</span>
+            </div>
+            <span class="text">IN PROGRESS</span>
+        </div>
+    </div>
+
+
+    <div class="container c2">
+        <div class="item critical">
+            <div class="circle" data-percentage="1">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle class="background" cx="75" cy="75" r="70"></circle>
+                    <circle class="foreground" cx="75" cy="75" r="70"></circle>
+                </svg>
+                <span class="progress">1</span>
+            </div>
+            <span class="text">CRITICAL</span>
+        </div>
+        <div class="item moderate">
+            <div class="circle" data-percentage="1">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle class="background" cx="75" cy="75" r="70"></circle>
+                    <circle class="foreground" cx="75" cy="75" r="70"></circle>
+                </svg>
+                <span class="progress">1</span>
+            </div>
+            <span class="text">MODERATE</span>
+        </div>
+        <div class="item low">
+            <div class="circle" data-percentage="1">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle class="background" cx="75" cy="75" r="70"></circle>
+                    <circle class="foreground" cx="75" cy="75" r="70"></circle>
+                </svg>
+                <span class="progress">1</span>
+            </div>
+            <span class="text">LOW</span>
+        </div>
+        <div class="item informational">
+            <div class="circle" data-percentage="1">
+                <svg width="150" height="150" viewBox="0 0 150 150">
+                    <circle class="background" cx="75" cy="75" r="70"></circle>
+                    <circle class="foreground" cx="75" cy="75" r="70"></circle>
+                </svg>
+                <span class="progress">1</span>
+            </div>
+            <span class="text">INFORMATIONAL</span>
+        </div>
+    </div>
+    <script src="reports.js"></script>
+</body>
+</html>
