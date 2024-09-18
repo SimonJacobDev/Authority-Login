@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup with Tabs and Details</title>
+    <style>
+        /* Internal CSS */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .popup {
+            display: block; /* Show popup by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            z-index: 1000; /* Ensure it's on top of other content */
+        }
+
+        .popup-content {
+            position: relative;
+            background-color: white;
+            margin: 5% auto;
+            width: 80%;
+            height: 80%;
+            display: flex;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .tab-container {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            background-color: #f4f4f4;
+            border-right: 1px solid #ddd;
+        }
+
+        .tabs {
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-button {
+            padding: 15px;
+            border: none;
+            background: #ddd;
+            text-align: center;
+            cursor: pointer;
+            flex: 1;
+            font-size: 16px;
+            border-bottom: 3px solid transparent;
+            transition: background-color 0.3s, border-bottom-color 0.3s;
+        }
+
+        .tab-button.active {
+            background: #fff;
+            border-bottom-color: #007bff;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            flex: 1;
+            overflow: hidden;
+            padding: 10px;
+        }
+
+        .tab-panel {
+            display: none;
+            height: 100%;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        .tab-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .details-container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .severity-bar {
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .severity-low {
+            background-color: #28a745; /* Green */
+        }
+
+        .severity-medium {
+            background-color: #ffc107; /* Yellow */
+        }
+
+        .severity-high {
+            background-color: #dc3545; /* Red */
+        }
+
+        .user-details {
+            margin-bottom: 20px;
+        }
+
+        .user-details div {
+            margin-bottom: 10px;
+        }
+
+        .user-details label {
+            font-weight: bold;
+        }
+
+        .action-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-button:hover {
+            background-color: #0056b3;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="closeButton" class="close-button">&times;</span>
+            <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab-button active" data-target="image">Image</button>
+                    <button class="tab-button" data-target="map">Map</button>
+                </div>
+                <div class="tab-content">
+                    <div id="image" class="tab-panel active">
+                        <img src="images/rdd1.jpg" alt="Placeholder Image" class="tab-image">
+                    </div>
+                    <div id="map" class="tab-panel">
+                        <!-- Replace with actual map content, e.g., an iframe with Google Maps -->
+                        <iframe src="https://www.google.com/maps/embed" frameborder="0" style="width:100%; height:100%;" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="details-container">
+                <div class="severity-bar severity-high">High Severity</div>
+                <div class="user-details">
+                    <div><label for="name">Name:</label> John Doe</div>
+                    <div><label for="date">Date:</label> September 3, 2024</div>
+                    <div><label for="time">Time:</label> 14:00</div>
+                    <div><label for="location">Location:</label> 123 Main St</div>
+                    <div><label for="status">Status:</label> In Progress</div>
+                </div>
+                <button class="action-button">Take Action</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Internal JavaScript
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var popup = document.getElementById('popup');
+            var closeButton = document.getElementById('closeButton');
+
+            closeButton.addEventListener('click', function() {
+                popup.style.display = 'none';
+            });
+
+            var tabButtons = document.querySelectorAll('.tab-button');
+            var tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    var target = this.getAttribute('data-target');
+
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanels.forEach(panel => panel.classList.remove('active'));
+
+                    this.classList.add('active');
+                    document.getElementById(target).classList.add('active');
+                });
+            });
+
+            // Optional: Close the popup when clicking outside of it
+            window.addEventListener('click', function(event) {
+                if (event.target === popup) {
+                    popup.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

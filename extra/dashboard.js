@@ -63,7 +63,8 @@ function renderReports(filteredReports) {
                         <p>Status: ${report.status}</p>
                     </div>
                     <div class="actions">
-                        <button>View</button>
+                    <a href="view.html">
+                        <button>View</button></a>
                         <div class="location">
                             <p>${report.city}</p>
                             <img src="${report.mapIcon}" alt="Map Icon" class="map-icon">
